@@ -3,14 +3,14 @@
 天气：{{weather.DATA}}
 最低气温: {{min_temperature.DATA}}
 最高气温: {{max_temperature.DATA}}
+{{ganmao.DATA}}
+{{notice.DATA}}
+
 今天是我们相识的第{{love_day.DATA}}天
 {{birthday_message.DATA}}
+{{holidaytts.DATA}}
 
 {{one_talk.DATA}} -- {{talk_from.DATA}}
 
 {{note_en.DATA}}
 {{note_ch.DATA}}
-
-{{comprehensive_horoscope.DATA}}
-
-{{love_horoscope.DATA}}
