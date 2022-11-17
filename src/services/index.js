@@ -550,14 +550,14 @@ export const getFoodMessage = () => {
   let resMessage = ''
   const canteen_list = ['新一食堂', '新二食堂', '新三食堂', '教工食堂', '三食堂', '清真食堂', '京工食堂']
   let target_canteen_list = ['', '', '']
-  const weight_list = [1, 1, 1, 1, 1, 1, 1]
+  const weight_list = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
   let sum = 0;
   for (let i = 0; i < weight_list.length; i ++) {
     sum += weight_list[i]
   }
-  let number = Math.floor(Math.random()*sum)
   for(let tc = 0; tc < 3; tc ++) {
     let tmp = 0;
+    let number = Math.floor(Math.random() * sum)
     for (let j = 0; j < weight_list.length; j ++) {
       tmp += weight_list[j]
       if (tmp > number) {
