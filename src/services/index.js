@@ -559,10 +559,10 @@ export const getFoodMessage = () => {
   let tmp = 0
 
   for(let tc = 0; tc < 3; tc ++) {
-    for (let i = 0; i < weight_list.length; i ++) {
-      tmp += weight_list[i]
+    for (let j = 0; j < weight_list.length; j ++) {
+      tmp += weight_list[j]
       if (tmp > number) {
-        target_canteen_list[tc] = canteen_list[i]
+        target_canteen_list[tc] = canteen_list[j]
       }
     }
   }
@@ -573,7 +573,7 @@ export const getFoodMessage = () => {
 
   resMessage += `${breakfast_message} ${getLB()}`;
   resMessage += `${lunch_message} ${getLB()}`;
-  resMessage += `${lunch_message} ${getLB()}`;
+  resMessage += `${dinner_message} ${getLB()}`;
 
   return resMessage
 }
