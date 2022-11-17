@@ -556,9 +556,8 @@ export const getFoodMessage = () => {
     sum += weight_list[i]
   }
   let number = Math.floor(Math.random()*sum)
-  let tmp = 0
-
   for(let tc = 0; tc < 3; tc ++) {
+    let tmp = 0
     for (let j = 0; j < weight_list.length; j ++) {
       tmp += weight_list[j]
       if (tmp > number) {
