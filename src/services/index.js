@@ -546,6 +546,38 @@ export const getBirthdayMessage = (festivals) => {
   return resMessage
 }
 
+export const getFoodMessage = () => {
+  let resMessage = ''
+  const canteen_list = ['新一食堂', '新二食堂', '新三食堂', '教工食堂', '三食堂', '清真食堂', '京工食堂']
+  let target_canteen_list = ['', '', '']
+  const weight_list = [1, 1, 1, 1, 1, 1, 1]
+  let sum = 0;
+  for (let i = 0; i < weight_list.length; i ++) {
+    sum += weight_list[i]
+  }
+  let number = Math.floor(Math.random()*sum)
+  let tmp = 0
+
+  for(let tc = 0; tc < 3; tc ++) {
+    for (let i = 0; i < weight_list.length; i ++) {
+      tmp += weight_list[i]
+      if (tmp > number) {
+        target_canteen_list[tc] = canteen_list[i]
+      }
+    }
+  }
+
+  let breakfast_message = '早上要不去' + target_canteen_list[0]  + '吃吧？';
+  let lunch_message = '中午去' + target_canteen_list[1] + '看看有没有好吃的';
+  let dinner_message = '晚上去' + target_canteen_list[2] + '或许有惊喜';
+
+  resMessage += `${breakfast_message} ${getLB()}`;
+  resMessage += `${breakfast_message} ${getLB()}`;
+  resMessage += `${breakfast_message} ${getLB()}`;
+
+  return resMessage
+}
+
 /**
  * 计算每个重要日子的日期差
  * @params {*} customizedDateList
@@ -734,6 +766,8 @@ export const getAggregatedData = async () => {
     // 获取生日/生日信息
     const birthdayMessage = getBirthdayMessage(user.festivals)
 
+    const foodMessage = getFoodMessage()
+
     // 获取星座运势
     const constellationFortune = await getConstellationFortune(user.horoscopeDate, user.horoscopeDateType)
 
@@ -775,6 +809,7 @@ export const getAggregatedData = async () => {
       { name: toLowerLine('province'), value: user.province || config.PROVINCE, color: getColor() },
       { name: toLowerLine('city'), value: user.city || config.CITY, color: getColor() },
       { name: toLowerLine('birthdayMessage'), value: birthdayMessage, color: getColor() },
+      { name: toLowerLine('foodMessage'), value: foodMessage, color: getColor},
       { name: toLowerLine('noteEn'), value: noteEn, color: getColor() },
       { name: toLowerLine('noteCh'), value: noteCh, color: getColor() },
       { name: toLowerLine('holidaytts'), value: holidaytts, color: getColor() },
