@@ -557,11 +557,12 @@ export const getFoodMessage = () => {
   }
   let number = Math.floor(Math.random()*sum)
   for(let tc = 0; tc < 3; tc ++) {
-    let tmp = 0
+    let tmp = 0;
     for (let j = 0; j < weight_list.length; j ++) {
       tmp += weight_list[j]
       if (tmp > number) {
         target_canteen_list[tc] = canteen_list[j]
+        break;
       }
     }
   }
