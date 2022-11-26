@@ -6,13 +6,9 @@
 {{ganmao.DATA}}
 {{notice.DATA}}
 
-今天是我们相识的第{{love_day.DATA}}天
+今天是我们相识的第{{meet_day.DATA}}天
+今天是我们在一起的第{{love_day.DATA}}天
 {{birthday_message.DATA}}
 {{holidaytts.DATA}}
 
 {{food_message.DATA}}
-
-{{one_talk.DATA}} -- {{talk_from.DATA}}
-
-{{note_en.DATA}}
-{{note_ch.DATA}}

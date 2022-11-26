@@ -571,7 +571,7 @@ export const getFoodMessage = () => {
   let lunch_message = '中午不如去' + target_canteen_list[1] + '看看有没有好吃的？';
   let dinner_message = '晚上去' + target_canteen_list[2] + '或许有惊喜？';
 
-  resMessage += `${breakfast_message} ${getLB()}`;
+  // resMessage += `${breakfast_message} ${getLB()}`;
   resMessage += `${lunch_message} ${getLB()}`;
   resMessage += `${dinner_message} ${getLB()}`;
 
