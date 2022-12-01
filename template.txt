@@ -11,4 +11,6 @@
 {{birthday_message.DATA}}
 {{holidaytts.DATA}}
 
-{{food_message.DATA}}
+{{earthy_love_words.DATA}}
+
+{{love_horoscope.DATA}}
